@@ -4,9 +4,9 @@ import argparse
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('--pdf_path', type=str, help='Path to the pdf')
-parser.add_argument('--offset', type=int, default=0, help='difference between content page number and actual page no.')
-parser.add_argument('--contents', type=str, help='Path to the contents text file')
+parser.add_argument('-p', '--pdf_path', type=str, help='Path to the pdf')
+parser.add_argument('-o', '--offset', type=int, default=0, help='Difference between content page number and actual page no.')
+parser.add_argument('-c', '--contents', type=str, help='Path to the contents text file')
 config = parser.parse_args()
 
 filename = config.pdf_path
@@ -49,7 +49,8 @@ for topics in cont.split('\n')[:-1]:
         plevel = level
     print(stack, parent) 
 
-with open('Indexed '+filename.split('/')[-1] , 'wb') as output_file:
-    print('finished..')
+with open('[Indexed] '+filename.split('/')[-1] , 'wb') as output_file:
+    print('writing file..', '\n', '[Indexed] '+filename.split('/')[-1])
     output.write(output_file)
+    print('finished..')
     output_file.close() 
