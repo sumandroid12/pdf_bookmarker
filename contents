@@ -1,0 +1,502 @@
+1 Introduction And Overview 3
+1.1 The Importance Of Architecture 3
+1.2 Learning The Essentials 3
+1.3 Organization Of The Text 4
+1.4 What We Will Omit 4
+1.5 Terminology: Architecture And Design 5
+1.6 Summary 5
+PART I Basics 7
+2 Fundamentals Of Digital Logic 11
+2.1 Introduction 11
+2.2 Digital Computing Mechanisms 11
+2.3 Electrical Terminology: Voltage And Current 12
+2.4 The Transistor 13
+2.5 Logic Gates 14
+2.6 Implementation Of A Nand Logic Gate Using Transistors 16
+2.7 Symbols Used For Logic Gates 17
+2.8 Example Interconnection Of Gates 17
+2.9 A Digital Circuit For Binary Addition 20
+2.10 Multiple Gates Per Integrated Circuit 22
+2.11 The Need For More Than Combinatorial Circuits 22
+2.12 Circuits That Maintain State 23
+2.13 Propagation Delay 24
+2.14 Using Latches To Create A Memory 24
+2.15 Flip-Flops And Transition Diagrams 25
+2.16 Binary Counters 27
+2.17 Clocks And Sequences 28
+2.18 The Important Concept Of Feedback 31
+2.19 Starting A Sequence 32
+2.20 Iteration In Software Vs. Replication In Hardware 33
+2.21 Gate And Chip Minimization 34
+2.22 Using Spare Gates 34
+2.23 Power Distribution And Heat Dissipation 35
+2.24 Timing And Clock Zones 35
+2.25 Clockless Logic 37
+2.26 Circuit Size And Moore’s Law 38
+2.27 Circuit Boards And Layers 39
+2.28 Levels Of Abstraction 39
+2.29 Summary 40
+3 Data And Program Representation 45
+3.1 Introduction 45
+3.2 Digital Logic And The Importance Of Abstraction 45
+3.3 Definitions Of Bit And Byte 46
+3.4 Byte Size And Possible Values 46
+3.5 Binary Weighted Positional Representation 47
+3.6 Bit Ordering 48
+3.7 Hexadecimal Notation 49
+3.8 Notation For Hexadecimal And Binary Constants 51
+3.9 Character Sets 51
+3.10 Unicode 52
+3.11 Unsigned Integers, Overflow, And Underflow 53
+3.12 Numbering Bits And Bytes 53
+3.13 Signed Binary Integers 55
+3.14 An Example Of Two’s Complement Numbers 56
+3.15 Sign Extension 57
+3.16 Floating Point 58
+3.17 Range Of IEEE Floating Point Values 59
+3.18 Special Values 60
+3.19 Binary Coded Decimal Representation 61
+3.20 Signed, Fractional, And Packed BCD Representations 62
+3.21 Data Aggregates 62
+3.22 Program Representation 63
+3.23 Summary 63
+PART II Processors 65
+4 The Variety Of Processors And Computational Engines 69
+4.1 Introduction 69
+4.2 The Two Basic Architectural Approaches 69
+4.3 The Harvard And Von Neumann Architectures 70
+4.4 Definition Of A Processor 71
+4.5 The Range Of Processors 72
+4.6 Hierarchical Structure And Computational Engines 73
+4.7 Structure Of A Conventional Processor 74
+4.8 Processor Categories And Roles 75
+4.9 Processor Technologies 77
+4.10 Stored Programs 77
+4.11 The Fetch-Execute Cycle 78
+4.12 Program Translation 79
+4.13 Clock Rate And Instruction Rate 79
+4.14 Control: Getting Started And Stopping 80
+4.15 Starting The Fetch-Execute Cycle 81
+4.16 Summary 82
+5 Processor Types And Instruction Sets 85
+5.1 Introduction 85
+5.2 Mathematical Power, Convenience, And Cost 85
+5.3 Instruction Set Architecture 86
+5.4 Opcodes, Operands, And Results 87
+5.5 Typical Instruction Format 87
+5.6 Variable-Length Vs. Fixed-Length Instructions 87
+5.7 General-Purpose Registers 88
+5.8 Floating Point Registers And Register Identification 89
+5.9 Programming With Registers 89
+5.10 Register Banks 90
+5.11 Complex And Reduced Instruction Sets 91
+5.12 RISC Design And The Execution Pipeline 92
+5.13 Pipelines And Instruction Stalls 93
+5.14 Other Causes Of Pipeline Stalls 95
+5.15 Consequences For Programmers 95
+5.16 Programming, Stalls, And No-Op Instructions 96
+5.17 Forwarding 97
+5.18 Types Of Operations 97
+5.19 Program Counter, Fetch-Execute, And Branching 98
+5.20 Subroutine Calls, Arguments, And Register Windows 99
+5.21 An Example Instruction Set 101
+5.22 Minimalistic Instruction Set 103
+5.23 The Principle Of Orthogonality 104
+5.24 Condition Codes And Conditional Branching 104
+5.25 Summary 105
+6 Data Paths And Instruction Execution 109
+6.1 Introduction 109
+6.2 Data Paths 109
+6.3 The Example Instruction Set 110
+6.4 Instructions In Memory 112
+6.5 Moving To The Next Instruction 114
+6.6 Fetching An Instruction 116
+6.7 Decoding An Instruction 116
+6.8 Connections To A Register Unit 118
+6.9 Control And Coordination 118
+6.10 Arithmetic Operations And Multiplexing 119
+6.11 Operations Involving Data In Memory 120
+6.12 Example Execution Sequences 121
+6.13 Summary 122
+7 Operand Addressing And Instruction Representation 127
+7.1 Introduction 127
+7.2 Zero, One, Two, Or Three Address Designs 127
+7.3 Zero Operands Per Instruction 128
+7.4 One Operand Per Instruction 129
+7.5 Two Operands Per Instruction 129
+7.6 Three Operands Per Instruction 130
+7.7 Operand Sources And Immediate Values 130
+7.8 The Von Neumann Bottleneck 131
+7.9 Explicit And Implicit Operand Encoding 132
+7.10 Operands That Combine Multiple Values 133
+7.11 Tradeoffs In The Choice Of Operands 134
+7.12 Values In Memory And Indirect Reference 135
+7.13 Illustration Of Operand Addressing Modes 136
+7.14 Summary 137
+8 CPUs: Microcode, Protection, And Processor Modes 141
+8.1 Introduction 141
+8.2 A Central Processor 141
+8.3 CPU Complexity 142
+8.4 Modes Of Execution 143
+8.5 Backward Compatibility 143
+8.6 Changing Modes 144
+8.7 Privilege And Protection 145
+8.8 Multiple Levels Of Protection 145
+8.9 Microcoded Instructions 146
+8.10 Microcode Variations 148
+8.11 The Advantage Of Microcode 148
+8.12 FPGAs And Changes To The Instruction Set 149
+8.13 Vertical Microcode 149
+8.14 Horizontal Microcode 150
+8.15 Example Horizontal Microcode 151
+8.16 A Horizontal Microcode Example 153
+8.17 Operations That Require Multiple Cycles 154
+8.18 Horizontal Microcode And Parallel Execution 155
+8.19 Look-Ahead And High Performance Execution 156
+8.20 Parallelism And Execution Order 157
+8.21 Out-Of-Order Instruction Execution 157
+8.22 Conditional Branches And Branch Prediction 158
+8.23 Consequences For Programmers 159
+8.24 Summary 159
+9 Assembly Languages And Programming Paradigm 163
+9.1 Introduction 163
+9.2 Characteristics Of A High-level Programming Language 163
+9.3 Characteristics Of A Low-level Programming Language 164
+9.4 Assembly Language 165
+9.5 Assembly Language Syntax And Opcodes 166
+9.6 Operand Order 168
+9.7 Register Names 169
+9.8 Operand Types 170
+9.9 Assembly Language Programming Paradigm And Idioms 170
+9.10 Coding An IF Statement In Assembly 171
+9.11 Coding An IF-THEN-ELSE In Assembly 172
+9.12 Coding A FOR-LOOP In Assembly 172
+9.13 Coding A WHILE Statement In Assembly 172
+9.14 Coding A Subroutine Call In Assembly 173
+9.15 Coding A Subroutine Call With Arguments In Assembly 174
+9.16 Consequence For Programmers 174
+9.17 Assembly Code For Function Invocation 175
+9.18 Interaction Between Assembly And High-level Languages 176
+9.19 Assembly Code For Variables And Storage 176
+9.20 Example Assembly Language Code 177
+9.21 Two-Pass Assembler 183
+9.22 Assembly Language Macros 185
+9.23 Summary 188
+PART III Memories 191
+10 Memory And Storage 195
+10.1 Introduction 195
+10.2 Definition 195
+10.3 The Key Aspects Of Memory 196
+10.4 Characteristics Of Memory Technologies 196
+10.5 The Important Concept Of A Memory Hierarchy 198
+10.6 Instruction And Data Store 198
+10.7 The Fetch-Store Paradigm 199
+10.8 Summary 199
+11 Physical Memory And Physical Addressing 203
+11.1 Introduction 203
+11.2 Characteristics Of Computer Memory 203
+11.3 Static And Dynamic RAM Technologies 204
+11.4 The Two Primary Measures Of Memory Technology 205
+11.5 Density 206
+11.6 Separation Of Read And Write Performance 206
+11.7 Latency And Memory Controllers 206
+11.8 Synchronous And Multiple Data Rate Technologies 207
+11.9 Memory Organization 209
+11.10 Memory Access And Memory Bus 209
+11.11 Words, Physical Addresses, And Memory Transfers 209
+11.12 Physical Memory Operations 210
+11.13 Memory Word Size And Data Types 211
+11.14 Byte Addressing And Mapping Bytes To Words 211
+11.15 Using Powers Of Two 213
+11.16 Byte Alignment And Programming 213
+11.17 Memory Size And Address Space 214
+11.18 Programming With Word Addressing 215
+11.19 Memory Size And Powers Of Two 215
+11.20 Pointers And Data Structures 216
+11.21 A Memory Dump 217
+11.22 Indirection And Indirect Operands 218
+11.23 Multiple Memories With Separate Controllers 218
+11.24 Memory Banks 219
+11.25 Interleaving 220
+11.26 Content Addressable Memory 221
+11.27 Ternary CAM 223
+11.28 Summary 223
+12 Caches And Caching 227
+12.1 Introduction 227
+12.2 Information Propagation In A Storage Hierarchy 227
+12.3 Definition of Caching 228
+12.4 Characteristics Of A Cache 228
+12.5 Cache Terminology 229
+12.6 Best And Worst Case Cache Performance 229
+12.7 Cache Performance On A Typical Sequence 231
+12.8 Cache Replacement Policy 231
+12.9 LRU Replacement 232
+12.10 Multilevel Cache Hierarchy 232
+12.11 Preloading Caches 233
+12.12 Caches Used With Memory 234
+12.13 Physical Memory Cache 234
+12.14 Write Through And Write Back 235
+12.15 Cache Coherence 236
+12.16 L1, L2, and L3 Caches 237
+12.17 Sizes Of L1, L2, And L3 Caches 238
+12.18 Instruction And Data Caches 238
+12.19 Modified Harvard Architecture 239
+12.20 Implementation Of Memory Caching 240
+12.21 Direct Mapped Memory Cache 240
+12.22 Using Powers Of Two For Efficiency 242
+12.23 Hardware Implementation Of A Direct Mapped Cache 243
+12.24 Set Associative Memory Cache 245
+12.25 Consequences For Programmers 246
+12.26 Summary 246
+13 Virtual Memory Technologies And Virtual Addressing 251
+13.1 Introduction 251
+13.2 Definition Of Virtual Memory 251
+13.3 Memory Management Unit And Address Space 252
+13.4 An Interface To Multiple Physical Memory Systems 252
+13.5 Address Translation Or Address Mapping 253
+13.6 Avoiding Arithmetic Calculation 255
+13.7 Discontiguous Address Spaces 255
+13.8 Motivations For Virtual Memory 257
+13.9 Multiple Virtual Spaces And Multiprogramming 258
+13.10 Creating Virtual Spaces Dynamically 259
+13.11 Base-Bound Registers 259
+13.12 Changing The Virtual Space 260
+13.13 Virtual Memory And Protection 261
+13.14 Segmentation 261
+13.15 Demand Paging 262
+13.16 Hardware And Software For Demand Paging 262
+13.17 Page Replacement 263
+13.18 Paging Terminology And Data Structures 264
+13.19 Address Translation In A Paging System 264
+13.20 Using Powers Of Two 266
+13.21 Presence, Use, And Modified Bits 267
+13.22 Page Table Storage 268
+13.23 Paging Efficiency And A Translation Lookaside Buffer 268
+13.24 Consequences For Programmers 269
+13.25 The Relationship Between Virtual Memory And Caching 270
+13.26 Virtual Memory Caching And Cache Flush 271
+13.27 Summary 272
+PART IV Input And Output 275
+14 Input / Output Concepts And Terminology 279
+14.1 Introduction 279
+14.2 Input And Output Devices 279
+14.3 Control Of An External Device 280
+14.4 Data Transfer 281
+14.5 Serial And Parallel Data Transfers 281
+14.6 Self-Clocking Data 282
+14.7 Full-Duplex And Half-Duplex Interaction 282
+14.8 Interface Throughput And Latency 283
+14.9 The Fundamental Idea Of Multiplexing 283
+14.10 Multiple Devices Per External Interface 285
+14.11 A Processor’s View Of I/O 285
+14.12 Summary 285
+15 Buses And Bus Architectures 289
+15.1 Introduction 289
+15.2 Definition Of A Bus 289
+15.3 Processors, I/O Devices, And Buses 290
+15.4 Physical Connections 291
+15.5 Bus Interface 292
+15.6 Control, Address, And Data Lines 293
+15.7 The Fetch-Store Paradigm 294
+15.8 Fetch-Store And Bus Size 294
+15.9 Multiplexing 295
+15.10 Bus Width And Size Of Data Items 296
+15.11 Bus Address Space 297
+15.12 Potential Errors 298
+15.13 Address Configuration And Sockets 299
+15.14 The Question Of Multiple Buses 300
+15.15 Using Fetch-Store With Devices 300
+15.16 Operation Of An Interface 301
+15.17 Asymmetric Assignments And Bus Errors 302
+15.18 Unified Memory And Device Addressing 302
+15.19 Holes In A Bus Address Space 304
+15.20 Address Map 304
+15.21 Program Interface To A Bus 305
+15.22 Bridging Between Two Buses 306
+15.23 Main And Auxiliary Buses 306
+15.24 Consequences For Programmers 308
+15.25 Switching Fabrics As An Alternative To Buses 308
+15.26 Summary 309
+16 Programmed And Interrupt-Driven I/O 313
+16.1 Introduction 313
+16.2 I/O Paradigms 313
+16.3 Programmed I/O 314
+16.4 Synchronization 314
+16.5 Polling 315
+16.6 Code For Polling 315
+16.7 Control And Status Registers 318
+16.8 Using A Structure To Define CSRs 318
+16.9 Processor Use And Polling 320
+16.10 Interrupt-Driven I/O 320
+16.11 An Interrupt Mechanism And Fetch-Execute 321
+16.12 Handling An Interrupt 322
+16.13 Interrupt Vectors 323
+16.14 Interrupt Initialization And Disabled Interrupts 324
+16.15 Interrupting An Interrupt Handler 324
+16.16 Configuration Of Interrupts 325
+16.17 Dynamic Bus Connections And Pluggable Devices 326
+16.18 Interrupts, Performance, And Smart Devices 326
+16.19 Direct Memory Access (DMA) 328
+16.20 Extending DMA With Buffer Chaining 328
+16.21 Scatter Read And Gather Write Operations 329
+16.22 Operation Chaining 330
+16.23 Summary 330
+17 A Programmer’s View Of Devices, I/O, And Buffering 335
+17.1 Introduction 335
+17.2 Definition Of A Device Driver 336
+17.3 Device Independence, Encapsulation, And Hiding 336
+17.4 Conceptual Parts Of A Device Driver 337
+17.5 Two Categories Of Devices 338
+17.6 Example Flow Through A Device Driver 338
+17.7 Queued Output Operations 339
+17.8 Forcing A Device To Interrupt 341
+17.9 Queued Input Operations 342
+17.10 Asynchronous Device Drivers And Mutual Exclusion 342
+17.11 I/O As Viewed By An Application 343
+17.12 The Library/Operating System Dichotomy 344
+17.13 I/O Operations That The OS Supports 345
+17.14 The Cost Of I/O Operations 346
+17.15 Reducing System Call Overhead 347
+17.16 The Key Concept Of Buffering 347
+17.17 Implementation of Buffered Output 348
+17.18 Flushing A Buffer 349
+17.19 Buffering On Input 350
+17.20 Effectiveness Of Buffering 350
+17.21 Relationship To Caching 351
+17.22 An Example: The C Standard I/O Library 352
+17.23 Summary 352
+PART V Advanced Topics 355
+18 Parallelism 359
+18.1 Introduction 359
+18.2 Parallel And Pipelined Architectures 359
+18.3 Characterizations Of Parallelism 360
+18.4 Microscopic Vs. Macroscopic 360
+18.5 Examples Of Microscopic Parallelism 361
+18.6 Examples Of Macroscopic Parallelism 361
+18.7 Symmetric Vs. Asymmetric 362
+18.8 Fine-grain Vs. Coarse-grain Parallelism 362
+18.9 Explicit Vs. Implicit Parallelism 363
+18.10 Types Of Parallel Architectures (Flynn Classification) 363
+18.11 Single Instruction Single Data (SISD) 364
+18.12 Single Instruction Multiple Data (SIMD) 364
+18.13 Multiple Instructions Multiple Data (MIMD) 366
+18.14 Communication, Coordination, And Contention 368
+18.15 Performance Of Multiprocessors 369
+18.16 Consequences For Programmers 371
+18.17 Redundant Parallel Architectures 374
+18.18 Distributed And Cluster Computers 375
+18.19 A Modern Supercomputer 375
+18.20 Summary 376
+19 Data Pipelining 381
+19.1 Introduction 381
+19.2 The Concept Of Pipelining 381
+19.3 Software Pipelining 383
+19.4 Software Pipeline Performance And Overhead 384
+19.5 Hardware Pipelining 385
+19.6 How Hardware Pipelining Increases Performance 385
+19.7 When Pipelining Can Be Used 388
+19.8 The Conceptual Division Of Processing 389
+19.9 Pipeline Architectures 390
+19.10 Pipeline Setup, Stall, And Flush Times 390
+19.11 Definition Of Superpipeline Architecture 391
+19.12 Summary 391
+20 Power And Energy 395
+20.1 Introduction 395
+20.2 Definition Of Power 395
+20.3 Definition Of Energy 396
+20.4 Power Consumption By A Digital Circuit 397
+20.5 Switching Power Consumed By A CMOS Digital Circuit 398
+20.6 Cooling, Power Density, And The Power Wall 399
+20.7 Energy Use 399
+20.8 Power Management 400
+20.9 Software Control Of Energy Use 403
+20.10 Choosing When To Sleep And When To Awaken 404
+20.11 Sleep Modes And Network Devices 406
+20.12 Summary 406
+21 Assessing Performance 411
+21.1 Introduction 411
+21.2 Measuring Computational Power And Performance 411
+21.3 Measures Of Computational Power 412
+21.4 Application Specific Instruction Counts 413
+21.5 Instruction Mix 414
+21.6 Standardized Benchmarks 415
+21.7 I/O And Memory Bottlenecks 416
+21.8 Moving The Boundary Between Hardware And Software 416
+21.9 Choosing Items To Optimize, Amdahl’s Law 417
+21.10 Amdahl’s Law And Parallel Systems 418
+21.11 Summary 418
+22 Architecture Examples And Hierarchy 423
+22.1 Introduction 423
+22.2 Architectural Levels 423
+22.3 System-level Architecture: A Personal Computer 424
+22.4 Bus Interconnection And Bridging 425
+22.5 Controller Chips And Physical Architecture 426
+22.6 Virtual Buses 426
+22.7 Connection Speeds 428
+22.8 Bridging Functionality And Virtual Buses 429
+22.9 Board-level Architecture 430
+22.10 Chip-level Architecture 431
+22.11 Structure Of Functional Units On A Chip 432
+22.12 Summary 432
+23 Hardware Modularity 437
+23.1 Introduction 437
+23.2 Motivations For Modularity 437
+23.3 Software Modularity 438
+23.4 Parameterized Invocation Of Subprograms 438
+23.5 Hardware Scaling And Parallelism 439
+23.6 Basic Block Replication 439
+23.7 An Example Design (Rebooter) 439
+23.8 High-level Rebooter Design 440
+23.9 A Building Block To Accommodate A Range Of Sizes 441
+23.10 Parallel Interconnection 441
+23.11 An Example Interconnection 442
+23.12 Module Selection 442
+23.13 Summary 443
+Appendix 1 Lab Exercises For A Computer Architecture Course 445
+A1.1 Introduction 445
+A1.2 Hardware Required for Digital Logic Experiments 446
+A1.3 Solderless Breadboard 446
+A1.4 Using A Solderless Breadboard 447
+A1.5 Power And Ground Connections 448
+A1.6 Building And Testing Circuits 448
+A1.7 Lab Exercises 449
+1 Introduction and account configuration 450
+2 Digital Logic: Use of a breadboard 451
+3 Digital Logic: Building an adder from gates 453
+4 Digital Logic: Clocks and decoding 455
+5 Representation: Testing big endian vs. little endian 457
+6 Representation: A hex dump function in C 459
+7 Processors: Learn a RISC assembly language 461
+8 Processors: Function that can be called from C 463
+9 Memory: Row-major and column-major array storage 465
+10 Input / Output: A buffered I/O library 467
+11 A hex dump program in assembly language 469
+Appendix 2 Rules For Boolean Algebra Simplification 471
+A2.1 Introduction 471
+A2.2 Notation Used 471
+A2.3 Rules Of Boolean Algebra 472
+Appendix 3 A Quick Introduction To x86 Assembly Language 473
+A3.1 Introduction 473
+A3.2 The x86 General-Purpose Registers 474
+A3.3 Allowable Operands 475
+A3.4 Intel And AT&T Forms Of x86 Assembly Language 476
+A3.5 Arithmetic Instructions 478
+A3.6 Logical Operations 479
+A3.7 Basic Data Types 480
+A3.8 Data Blocks, Arrays, And Strings 482
+A3.9 Memory References 483
+A3.10 Data Size Inference And Explicit Size Directives 484
+A3.11 Computing An Address 485
+A3.12 The Stack Operations Push And Pop 486
+A3.13 Flow Of Control And Unconditional Branch 487
+A3.14 Conditional Branch And Condition Codes 487
+A3.15 Subprogram Call And Return 488
+A3.16 C Calling Conventions And Argument Passing 489
+A3.17 Function Calls And A Return Value 491
+A3.18 Extensions To Sixty-four Bits (x64) 491
+A3.19 Summary 492
+Appendix 4 ARM Register Definitions And Calling Sequence 495
+A4.1 Introduction 495
+A4.2 Registers On An ARM Processor 495
+A4.3 ARM Calling Conventions 496
+Index 501 
