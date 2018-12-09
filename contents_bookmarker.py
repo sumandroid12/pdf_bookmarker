@@ -1,7 +1,16 @@
-from PyPDF2 import  PdfFileReader, PdfFileWriter
+from PyPDF2 import PdfFileWriter, PdfFileReader
+import argparse
 
-filename = '/home/suman/code/python/bookmark_pdf/Douglas C.- Computer Architecture.pdf'
-cont = open('contents', 'r', encoding='utf-8')
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument('--pdf_path', type=str, help='Path to the pdf')
+parser.add_argument('--offset', type=int, default=0, help='difference between content page number and actual page no.')
+parser.add_argument('--contents', type=str, help='Path to the contents text file')
+config = parser.parse_args()
+
+filename = config.pdf_path
+cont = open(config.contents, 'r', encoding='utf-8')
 cont = cont.read()
 output = PdfFileWriter()
 input1 = PdfFileReader(open(filename, 'rb'))
@@ -11,7 +20,7 @@ for page in range(total_page):
     output.addPage(input1.getPage(page))
 
 plevel = 0
-offset = 24
+offset = config.offset
 stack = []
 parent = None
 for topics in cont.split('\n')[:-1]:
