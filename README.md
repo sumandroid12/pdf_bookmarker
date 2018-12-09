@@ -4,7 +4,7 @@ A simple python snippet to bookmark unindexed pdf files
 
 Structure of `contents.txt` 
 
-| ++Sl. No++ | Topic | Pg No. |
+| Sl. No | Topic | Pg No. |
 |------------|:-----:|--------|
 ```
 1.      Topic           1
@@ -15,7 +15,9 @@ Structure of `contents.txt`
 2.      Topic           5
 1.2     Subtopic        5
 ```
+
 leads to corresponding bookmark structure 
+
 ``` 
 ├── 1.Topic
 │   ├── 1.1 Subtopic
