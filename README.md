@@ -1,18 +1,18 @@
 # PDF Bookmarker
 
-A simple python snippet to bookmark unindexed pdf files
+A simple python snippet to bookmark unindexed pdf files using Depth First Search.
 
 Structure of `contents.txt`. Amount of whitespace does not matter.
 
 | Sl. No | Topic | Pg No. |
 |--------|:-----:|--------|
 ```
-1.      Topic           1
+1       Topic           1
 1.1     Subtopic        2
 1.1.1   Subsubtopic     2
 1.1.2   Subsubtopic     3
 1.2     Subtopic        4
-2.      Topic           5
+2       Topic           5
 1.2     Subtopic        5
 ```
 
