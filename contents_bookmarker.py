@@ -1,5 +1,7 @@
+#!/usr/bin/env python
 from PyPDF2 import PdfFileWriter, PdfFileReader
 import argparse
+import os
 
 
 parser = argparse.ArgumentParser()
@@ -14,6 +16,9 @@ cont = open(config.contents, 'r', encoding='utf-8')
 cont = cont.read()
 output = PdfFileWriter()
 input1 = PdfFileReader(open(filename, 'rb'))
+folder = '/'.join(filename.split('/')[:-1])
+os.chdir(folder)
+
 total_page = input1.getNumPages()
 
 for page in range(total_page):
